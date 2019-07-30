@@ -2,7 +2,10 @@
 
 If you want to setup your own polkadot nodes we hereby give you some inspiration with a description of our own infrastructure in combination with a couple of automated scripts that makes it easier to get started.
 
-Please see the `Scripts` folder in this repository.
+The automated scripts are in the `Scripts` folder in this repository.
+
+Instead of running your own Polkadot node, you are welcome to use Validators public node: https://github.com/Validators/Polkadot-Public-Node-API-Documentation#polkadot-public-nodes
+
 ## Infrastructure backup and recovery mechanism - take one
 
 
