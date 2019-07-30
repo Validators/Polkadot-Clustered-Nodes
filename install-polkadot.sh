@@ -8,6 +8,9 @@ cd ~/
 echo "Installing Rust..."
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 
+echo "Initialize Rust - newer version currently breaks hex-literal."
+rustup update
+
 echo "Installing Polkadot build dependencies..."
 sudo apt install -y make clang pkg-config libssl-dev
 
