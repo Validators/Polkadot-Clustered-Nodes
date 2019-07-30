@@ -1,19 +1,5 @@
-# Polkadot-Scripts
-Scripts to automate polkadot node setup on Ubuntu 18.04.
+# Polkadot-Infrastructure
 
-It installs the primary requirement (Rust) and registers the polkadot node as a deamon (service) that automatically starts, also after a server reboot.
+If you want to setup your own polkadot nodes we hereby give you some inspiration by defining our own infrastructure and open sourcing a couple of scripts that makes it easier to get started.
 
-
-
-1. Copy the install-polkadot.sh file into your Ubuntu distro home directory.
-2. Run this command to allow execution: `chmod +x install-polkadot.sh`
-3. Then run the script: `./install-polkadot.sh`
-
-
-
-To keep your Ubuntu updated with the latest packages run:
-
-`apt-get update`
-
-`apt-get upgrade`
-
+![Infrastructure](https://octodex.github.com/images/yaktocat.png)
