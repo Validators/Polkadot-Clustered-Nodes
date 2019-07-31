@@ -4,7 +4,7 @@ If you want to setup your own polkadot nodes we hereby give you some inspiration
 
 The automated scripts are in the `Scripts` folder in this repository.
 
-Instead of running your own Polkadot node, you are welcome to use Validators public node: https://github.com/Validators/Polkadot-Public-Node-API-Documentation#polkadot-public-nodes
+Instead of running your own Polkadot node, you are welcome to use Validators: [polkadot public nodes](https://github.com/Validators/Polkadot-Public-Node-API-Documentation#polkadot-public-nodes).
 
 ## Infrastructure backup and recovery mechanism - take one
 
@@ -17,7 +17,11 @@ The **proxy layer** consists of simple implementations of API Authentication, Ca
 
 In the case of issues with our primary hosting provider, the fallback server can be redirected to at the DNS level with a 5 minutes (Cloudflare) propagation time. Individual DNS cache on the internet may take longer to update. In such an extreeme situation we can currently not guarantee same node response because the fallback server has its on set of polkadot nodes.
 
-The setup is illustrated in the image below.
+The setup is illustrated at a high level in the image below.
 
 
 ![Polkadot Public node Infrastructure](https://raw.githubusercontent.com/Validators/Polkadot-Infrastructure/master/Polkadot-Public-Nodes-Architechture-1.0.png)
+
+In conclusion this allows for Node and OS updates with zero downtime of the public node service. 
+
+Please goto [validators.io](https://validators.io) to register for our free polkadot public node.
