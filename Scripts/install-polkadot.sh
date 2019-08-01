@@ -3,13 +3,16 @@
 set -euo pipefail # Exit script if any errors occur during individual commands
 
 echo "Changing to home directory..."
-cd ~/
+cd /home
 
 echo "Installing Rust..."
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-echo "Initialize Rust - newer version currently breaks hex-literal."
-rustup update
+echo "Initialize Rust - Fix for v0.4 issue with hex-literal."
+#rustup update
+rustup toolchain install nightly-2019-07-14
+rustup default nightly-2019-07-14
+rustup target add wasm32-unknown-unknown --toolchain nightly-2019-07-14
 
 echo "Installing Polkadot build dependencies..."
 sudo apt install -y make clang pkg-config libssl-dev
@@ -33,9 +36,13 @@ Description      = Polkadot Node Service
 
 [Service]
 User             = $(whoami)
-WorkingDirectory = /home/$(whoami)/
-ExecStart        = /home/$(whoami)/polkadot/target/release/polkadot --port 30333 --rpc-external --rpc-port 9933 --ws-external --ws-port 9944
+ExecStart        = /home/polkadot/target/release/polkadot --port 30333 --rpc-external --rpc-port 9933 --ws-external --ws-port 9944
 Restart          = on-failure
+StartLimitBurst  = 4
+# Restart, but not more than once every 2 minutes
+StartLimitInterval = 120
+# Restart, but not more than once every 30s (for testing purposes)
+StartLimitInterval = 30
 
 [Install]
 WantedBy         = multi-user.target
@@ -50,4 +57,7 @@ echo "Starting Polkadot service..."
 sudo systemctl start polkadot-node
 
 echo "Polkadot installation complete!"
-echo "Remember to open port 30333 in the firewall, e.g. with ufw: 'sudo ufw allow 30333'"
+
+sudo systemctl status polkadot-node
+
+echo "Remember to open port 30333 (P2P), 9933 (HTTP), and 9944 (WS) in the firewall"
