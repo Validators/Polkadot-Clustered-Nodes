@@ -4,7 +4,7 @@ Scripts to automate polkadot node setup on Ubuntu 18.04.
 
 ## install-polkadot.sh
 
-Installs the primary requirement (Rust), retrieved the latest Polkadot build (currently v0.4), and registers the polkadot node as a deamon (service) that automatically starts, also after a server reboot.
+Installs the primary requirement (Rust), retrieves the latest Polkadot build (currently v0.4), and registers the polkadot node as a deamon (service) that automatically starts, also after a server reboot.
 
 1. Copy the [install-polkadot.sh](install-polkadot.sh) file into your Ubuntu distro home. A folder called "polkadot" will automatically be created during the installation.
 2. Run this command to allow execution: `chmod +x install-polkadot.sh`

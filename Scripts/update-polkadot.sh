@@ -22,3 +22,5 @@ echo "Starting polkadot-node service..."
 sudo systemctl start polkadot-node
 
 echo "Polkadot update complete!"
+
+sudo systemctl status polkadot-node
