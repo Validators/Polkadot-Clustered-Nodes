@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+echo "Changing to home directory..."
+cd /home
+
 echo "Stopping polkadot-node service..."
 sudo systemctl stop polkadot-node
 
