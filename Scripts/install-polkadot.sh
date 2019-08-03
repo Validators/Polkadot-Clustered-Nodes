@@ -2,14 +2,13 @@
 
 set -euo pipefail # Exit script if any errors occur during individual commands
 
-echo "Changing to home directory..."
-cd /home
+echo "Changing to root directory..."
+cd ~/
 
-echo "Installing Rust..."
-curl https://sh.rustup.rs -sSf | sh -s -- -y
+echo "Installing Rust... - Do this manually until rustup is fixed without reboot."
+# curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-echo "Initialize Rust - Fix for v0.4 issue with hex-literal."
-#rustup update
+echo "Initialize Rust - Fix for v0.4 issue with hex-literal. - Please reboot before continue here. Then run ./install-polkadot.sh again. This is temporary."
 rustup toolchain install nightly-2019-07-14
 rustup default nightly-2019-07-14
 rustup target add wasm32-unknown-unknown --toolchain nightly-2019-07-14
@@ -27,7 +26,7 @@ cd polkadot
 cargo build --release
 
 echo "Registering Polkadot as Systemd service..."
-sudo rm /etc/systemd/system/polkadot-node.service
+sudo rm /etc/systemd/system/polkadot-node.service  || true
 sudo bash -c "cat >> /etc/systemd/system/polkadot-node.service" <<EOL
 # The Polkadot Node service
 
@@ -36,7 +35,7 @@ Description      = Polkadot Node Service
 
 [Service]
 User             = $(whoami)
-ExecStart        = /home/polkadot/target/release/polkadot --port 30333 --rpc-external --rpc-port 9933 --ws-external --ws-port 9944
+ExecStart        = /$(whoami)/polkadot/target/release/polkadot --port 30333 --rpc-external --rpc-port 9933 --ws-external --ws-port 9944
 Restart          = on-failure
 StartLimitBurst  = 4
 # Restart, but not more than once every 2 minutes
