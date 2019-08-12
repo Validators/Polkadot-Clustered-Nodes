@@ -11,6 +11,10 @@ echo "Pulling newest polkadot source..."
 cd polkadot
 git pull
 
+#In case we are still in terminal first time.
+echo "Adding rust path manually (to avoid having to re-login into terminal."
+source $HOME/.cargo/env
+
 echo "Building source..."
 ./scripts/init.sh
 ./scripts/build.sh
