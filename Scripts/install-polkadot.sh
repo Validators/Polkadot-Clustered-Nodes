@@ -2,7 +2,7 @@
 
 set -euo pipefail # Exit script if any errors occur during individual commands
 
-echo "Changing to root directory..."
+echo "Changing to home directory..."
 cd /home
 
 echo "Installing Rust..."

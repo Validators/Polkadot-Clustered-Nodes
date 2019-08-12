@@ -1,14 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Changing to root directory..."
-cd ~/
+echo "Changing to home directory..."
+cd /home
 
 echo "Stopping polkadot-node service..."
 sudo systemctl stop polkadot-node
 
 echo "Pulling newest polkadot source..."
-cd ~/polkadot
+cd polkadot
 git pull
 
 echo "Building source..."
