@@ -1,14 +1,6 @@
 # Polkadot-Scripts
 Scripts to automate polkadot node setup on Ubuntu 18.04.
 
-## Temporary first step:
-First install Rust. (Will eventually be included in script when reboot is not required.)
-
-`curl https://sh.rustup.rs -sSf | sh -s -- -y`
-
-then reboot: `sudo reboot`
-
-Then you can use the install script.
 
 ## install-polkadot.sh
 

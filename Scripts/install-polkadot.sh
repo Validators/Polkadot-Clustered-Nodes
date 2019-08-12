@@ -3,12 +3,15 @@
 set -euo pipefail # Exit script if any errors occur during individual commands
 
 echo "Changing to root directory..."
-cd ~/
+cd /home
 
-echo "Installing Rust... - Do this manually until rustup is fixed without reboot."
-# curl https://sh.rustup.rs -sSf | sh -s -- -y
+echo "Installing Rust..."
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-echo "Initialize Rust - Fix for v0.4 issue with hex-literal. - Please reboot before continue here. Then run ./install-polkadot.sh again. This is temporary."
+echo "Adding rust path manually (to avoid having to re-login into terminal."
+source $HOME/.cargo/env
+
+echo "Fix for v0.4 issue with hex-literal. This is temporary. Can be deleted when this version is released."
 rustup toolchain install nightly-2019-07-14
 rustup default nightly-2019-07-14
 rustup target add wasm32-unknown-unknown --toolchain nightly-2019-07-14
@@ -35,7 +38,7 @@ Description      = Polkadot Node Service
 
 [Service]
 User             = $(whoami)
-ExecStart        = /$(whoami)/polkadot/target/release/polkadot --port 30333 --rpc-external --rpc-port 9933 --ws-external --ws-port 9944
+ExecStart        = /home/polkadot/target/release/polkadot --port 30333 --rpc-external --rpc-port 9933 --ws-external --ws-port 9944
 Restart          = on-failure
 StartLimitBurst  = 4
 # Restart, but not more than once every 2 minutes
