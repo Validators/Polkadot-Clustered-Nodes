@@ -1,0 +1,16 @@
+config:
+  target: 'https://kusama.nnode.io'
+  phases:
+    - duration: 60
+      arrivalRate: 20
+  defaults:
+    headers:
+      ProjectApiKey: 'df37db03-2fc5-4b9f-8a46-c16e2a345b6d'
+scenarios:
+  - flow:
+    - post:
+        url: "/"
+        json:
+          id: "1"
+          jsonrpc: "2.0"
+          method: "state_getMetadata"

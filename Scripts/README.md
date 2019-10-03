@@ -30,9 +30,7 @@ Updates the client to the latest version of Polkadot. Be sure to take a backup o
 
 ## ubuntu update
 
-To keep your Ubuntu installation updated with the latest packages run these two commands:
+To keep your Ubuntu installation updated with the latest packages run this command (it will also remove unused packages):
 
-`apt-get update`
-
-`apt-get upgrade`
+`sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y`
 
