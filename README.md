@@ -25,3 +25,5 @@ The setup is illustrated at a high level in the image below.
 In conclusion this allows for Node and OS updates with zero downtime of the public node service. 
 
 Please goto [nnode.io](https://nnode.io) to register for our free public nodes.
+
+This software is release as open source under the Apache license version 2.0. Use at own risk.

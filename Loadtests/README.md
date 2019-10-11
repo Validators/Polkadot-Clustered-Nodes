@@ -102,3 +102,5 @@ Summary report @ 11:05:34(+0200) 2019-10-01
 
 ##
 Need data from the Kusama or Polkadot blockchain? Goto [nnode.io](https://nnode.io) to register for our [free public nodes](https://nnode.io).
+
+This software is release as open source under the Apache license version 2.0. Use at own risk.

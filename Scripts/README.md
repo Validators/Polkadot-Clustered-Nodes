@@ -1,5 +1,5 @@
 # Polkadot-Scripts
-Scripts to automate polkadot node setup on Ubuntu 18.04.
+Scripts to automate Polkadot (and Kusama) node setup on Ubuntu 18.04. This does not include any security measures related to Ubuntu - always be sure to harden your setup.
 
 
 ## install-polkadot.sh
@@ -34,3 +34,4 @@ To keep your Ubuntu installation updated with the latest packages run this comma
 
 `sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y`
 
+This software is release as open source under the Apache license version 2.0. Use at own risk.
