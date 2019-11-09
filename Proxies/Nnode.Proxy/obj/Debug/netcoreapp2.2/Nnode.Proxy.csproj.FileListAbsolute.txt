@@ -1,0 +1,14 @@
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\bin\Debug\netcoreapp2.2\Nnode.Proxy.deps.json
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\bin\Debug\netcoreapp2.2\Nnode.Proxy.runtimeconfig.json
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\bin\Debug\netcoreapp2.2\Nnode.Proxy.runtimeconfig.dev.json
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\bin\Debug\netcoreapp2.2\Nnode.Proxy.dll
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\obj\Debug\netcoreapp2.2\Nnode.Proxy.csprojAssemblyReference.cache
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\obj\Debug\netcoreapp2.2\Nnode.Proxy.csproj.CoreCompileInputs.cache
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\obj\Debug\netcoreapp2.2\Nnode.Proxy.RazorAssemblyInfo.cache
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\obj\Debug\netcoreapp2.2\Nnode.Proxy.RazorAssemblyInfo.cs
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\obj\Debug\netcoreapp2.2\Nnode.Proxy.AssemblyInfoInputs.cache
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\obj\Debug\netcoreapp2.2\Nnode.Proxy.AssemblyInfo.cs
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\obj\Debug\netcoreapp2.2\Nnode.Proxy.RazorTargetAssemblyInfo.cache
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\bin\Debug\netcoreapp2.2\Nnode.Proxy.pdb
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\obj\Debug\netcoreapp2.2\Nnode.Proxy.dll
+C:\Users\Anders\Source\Workspaces\Validators\Systems\Public Github\Polkadot-Scripts\Proxies\Nnode.Proxy\obj\Debug\netcoreapp2.2\Nnode.Proxy.pdb
