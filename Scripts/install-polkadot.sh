@@ -11,16 +11,12 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 echo "Adding rust path manually (to avoid having to re-login into terminal."
 source $HOME/.cargo/env
 
-echo "Fix for v0.4 issue with hex-literal. This is temporary. Can be deleted when this version is released."
-rustup toolchain install nightly-2019-07-14
-rustup default nightly-2019-07-14
-rustup target add wasm32-unknown-unknown --toolchain nightly-2019-07-14
 
 echo "Installing Polkadot build dependencies..."
 sudo apt install -y make clang pkg-config libssl-dev
 
 echo "Cloning Polkadot source from Github..."
-git clone --branch v0.4 https://github.com/paritytech/polkadot.git
+git clone --branch v0.6 https://github.com/paritytech/polkadot.git
 
 echo "Building Polkadot..."
 cd polkadot

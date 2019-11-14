@@ -2956,7 +2956,7 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 800
+    "CSharpLanguageVersion": 703
   },
   "RootNamespace": "Nnode.Proxy",
   "Documents": [],
