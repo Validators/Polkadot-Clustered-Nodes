@@ -1,6 +1,6 @@
-# Clustered-Polkadot-nodes
+# Clustered-Polkadot/Kusama-nodes
 
-If you want to setup your own clusted polkadot or kusama nodes we hereby give you a guide that has enabled the clusted node service found on nnode.io.
+If you want to setup your own clusted polkadot or kusama nodes we hereby give you a guide that has enabled the clusted node service found on nnode.io. It was partly funded by the Web3 Foundation. Here more about it here: https://github.com/Validators/Nnode.io-Public-Node-Documentation/blob/master/nnode.md
 
 The setup consists of these main parts:
 
@@ -40,7 +40,9 @@ Its a .Net Core Kestrel solution that can be deployed on Linux, Mac, and Windows
 Please goto the main "Proxies" repository for instructions on how to get started: https://github.com/Validators/Polkadot-Infrastructure/tree/master/Proxies
 
 ##
-Finally, after setting up all three part up you have a clustered network of nodes running that can be stress tested by using this example: https://github.com/Validators/Polkadot-Infrastructure/tree/master/Loadtests
+Finally, after setting up all three part up you have a clustered network of nodes running that can be manually tested using this guide: https://github.com/Validators/Nnode.io-Public-Node-Documentation.
+
+In addition, the endpoint can be stress tested by using this example: https://github.com/Validators/Polkadot-Infrastructure/tree/master/Loadtests
 
 You will now be able to create a DNS record that directs to your proxy server. For instance, Nnode.io has an kusama proxy endpoint at: https://kusama.nnoide.io that relays the traffic to a set of kusama nodes.
 

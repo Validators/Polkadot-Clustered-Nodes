@@ -12,8 +12,8 @@ namespace Nnode.Proxy.Authentication
 {
 	public static class ApiAuthenticationHandler
 	{
-		const string apiKey = "";
-		const string apiSecret = "";
+		const string apiKey = "test";
+		const string apiSecret = "test";
 
 		public static void ConfigureApiAuthenticationHandler(this IApplicationBuilder app)
 		{
@@ -21,15 +21,19 @@ namespace Nnode.Proxy.Authentication
 			{
 				// Save ApiKey for later
 				//
-				if (context.Request.Headers.ContainsKey("ProjectApiKey"))
+				var apiKey = "";
+				if (context.Request.Headers.ContainsKey("ApiKey"))
 				{
-					context.Items["ProjectApiKey"] = context.Request.Headers["ProjectApiKey"];
+					apiKey = context.Request.Headers["ApiKey"];
 				}
 
+				// Support apikey in querystring (for websocket)
+				//
 				var apiKeyFromQuery = context.Request.Query["apiKey"].SingleOrDefault();
 				if (apiKeyFromQuery != null)
-					context.Items["ProjectApiKey"] = apiKeyFromQuery;
+					apiKey = apiKeyFromQuery;
 
+				context.Items["ProjectApiKey"] = apiKey;
 
 				var hash = "";
 				if (context.Request.Headers.ContainsKey("Hash"))
@@ -43,6 +47,7 @@ namespace Nnode.Proxy.Authentication
 				if (!ComputeHash(apiSecret, bodyContent, hash))
 				{
 					context.Response.StatusCode = (int)HttpStatusCode.Forbidden;
+					Console.WriteLine("Access denied - HMAC Authentication failed. ApiKey or Hash in header may be missing. ApiKey: " + apiKey + " Hash: " + hash);
 				}
 				else
 				{

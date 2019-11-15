@@ -48,8 +48,8 @@ namespace Nnode.Proxy
 		// List of active blockchain nodes
 		//
 		public UpstreamHost[] nodes = {
-			new UpstreamHost("http://IP.one", weight:1)
-			,new UpstreamHost("http://IP.two", weight:1)
+			new UpstreamHost("https://google.com", weight:1)
+			,new UpstreamHost("https://google.com", weight:1)
 		};
 
 
