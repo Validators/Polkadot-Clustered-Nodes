@@ -23,7 +23,6 @@ Please follow the instructions from the "Developer Portal" repository to setup t
 ## 2 Running blockchain nodes
 This is the actual **Node Cluster** that is part of the blockchain. When running several nodes behind a proxy you are able to perform node and OS updates with zero downtime and mitigate agains denial-of-service attacks. Please follow the excellent tutorial found at the main repository of Polkadot to familiaze yourself with running a node:
 
-
 https://github.com/paritytech/polkadot
 
 Then goto our `Scripts` repository that shows you how to run blockchain nodes as a service on Ubuntu along with different scripts to automate upgrades:
