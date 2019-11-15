@@ -15,20 +15,18 @@ namespace Nnode.Proxy.SameNode
 			this.cache = cache;
 		}
 
-		public SameNodeRequest GetRequest(string ip)
+		public SameNodeRequest GetRequest(string cacheKey)
 		{
-			var key = "SameNode:" + ip;
+			var key = "SameNode:" + cacheKey;
 
 			var sameNodeRequest = cache.Get<SameNodeRequest>(key);
 
 			return sameNodeRequest;
 		}
 
-		public void SaveRequest(string ip, string host)
+		public void SaveRequest(string cacheKey, string host)
 		{
-			//TODO: Validate IP
-
-			var key = "SameNode:" + ip;
+			var key = "SameNode:" + cacheKey;
 			var request = new SameNodeRequest { Host = host };
 
 			// Keep in cache for this time, reset time if accessed.

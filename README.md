@@ -18,10 +18,10 @@ var apiSecret = RandomKeyGenerator.GetUniqueKey(128);
 ```
 
 ### Option 2: Setup developer portal for multiple users
-Please follow the instructions from the repository to setup the developer portal: https://github.com/Validators/Developer-Portal
+Please follow the instructions from the "Developer Portal" repository to setup the developer portal: https://github.com/Validators/Developer-Portal
 
 ## 2 Running blockchain nodes
-This is the actual **Node Cluster** that is part of the blockchain. When running several nodes behind a proxy you are able to perform node and OS updates with zero downtime. Please follow the excellent tutorial found at the main repository of Polkadot to familiaze yourself with running a node:
+This is the actual **Node Cluster** that is part of the blockchain. When running several nodes behind a proxy you are able to perform node and OS updates with zero downtime and mitigate agains denial-of-service attacks. Please follow the excellent tutorial found at the main repository of Polkadot to familiaze yourself with running a node:
 
 https://github.com/paritytech/polkadot
 
@@ -32,11 +32,16 @@ https://github.com/Validators/Polkadot-Infrastructure
 You now have your API-Keys ready along with a couple of nodes running. Its time to setup the reverse proxy layer.
 
 ## 3 Reverse proxies
-The **proxy layer** consists of custom implementations of API Authentication, Caching, and Node load balancers. It uses the ProxyKit library created by Damian Hickey (https://github.com/damianh/ProxyKit).
+The **proxy layer** consists of custom implementations of HMAC API Authentication, and a Node load balancer. It uses the ProxyKit library created by Damian Hickey (https://github.com/damianh/ProxyKit).
 
 Its a .Net Core Kestrel solution that can be deployed on Linux, Mac, and Windows.
 
-Please goto the main repository for instructions on how to get started: 
+Please goto the main "Proxies" repository for instructions on how to get started: https://github.com/Validators/Polkadot-Infrastructure/tree/master/Proxies
+
+##
+Finally, after setting up all three part up you have a clustered network of nodes running that can be stress tested by using this example: https://github.com/Validators/Polkadot-Infrastructure/tree/master/Loadtests
+
+You will now be able to create a DNS record that directs to your proxy server. For instance, Nnode.io has an kusama proxy endpoint at: https://kusama.nnoide.io that relays the traffic to a set of kusama nodes.
 
 ##
 Please goto [nnode.io](https://nnode.io) to register for our free public nodes.

@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +29,7 @@ namespace Nnode.Proxy
 		public IConfiguration Configuration { get; }
 
 		// This method gets called by the runtime. Use this method to add services to the container.
+		//
 		public void ConfigureServices(IServiceCollection services)
 		{
 			Console.WriteLine("# Proxy application started.");
@@ -54,6 +56,14 @@ namespace Nnode.Proxy
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env, SameNodeCache sameNodeList, RequestHistoryCache requestHistoryList)
 		{
+			// Enable Request.Body read several times from middleware and controllers
+			//
+			app.Use(async (context, next) => {
+				context.Request.EnableBuffering();
+				await next();
+			});
+
+
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
@@ -86,7 +96,7 @@ namespace Nnode.Proxy
 				context => context.WebSockets.IsWebSocketRequest,
 				appInner =>
 				{
-					appInner.UseWebSocketProxy( // TODO: track messages in websocket
+					appInner.UseWebSocketProxy(
 						context =>
 						{
 

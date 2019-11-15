@@ -13,9 +13,14 @@ namespace Nnode.Proxy.SameNode
 		{
 			app.Use(async (context, next) =>
 			{
+				// Getting ApiKey from the request stream (defined in ApiAuthenticationHandler)
+				//
+				var apiKey = context.Items["ProjectApiKey"];
 				var ip = context.GetClientIp();
 
-				var sameNodeRequest = sameNodeList.GetRequest(ip);
+				var cacheKey = string.Format("{0}-{1}", apiKey, ip);
+
+				var sameNodeRequest = sameNodeList.GetRequest(cacheKey);
 				string currentNodeHost = null;
 
 				// Is Cached
@@ -23,13 +28,11 @@ namespace Nnode.Proxy.SameNode
 				if (sameNodeRequest != null)
 				{
 					currentNodeHost = sameNodeRequest.Host;
-					//					Console.WriteLine(currentNodeHost + " cached from IP: " + ip);
 				}
 				else
 				{
 					currentNodeHost = roundRobin.Next().Uri.Host;
-					sameNodeList.SaveRequest(ip, currentNodeHost);
-					//					Console.WriteLine(currentNodeHost + " new from IP: " + ip);
+					sameNodeList.SaveRequest(cacheKey, currentNodeHost);
 				}
 
 				// Save in request stream for next middleware
