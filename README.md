@@ -1,6 +1,6 @@
 # Clustered-Polkadot/Kusama-nodes
 
-If you want to setup your own clusted polkadot or kusama nodes we hereby give you a guide that has enabled the clusted node service found on nnode.io. It was partly funded by the Web3 Foundation. Here more about it here: https://github.com/Validators/Nnode.io-Public-Node-Documentation/blob/master/nnode.md
+If you want to setup your own clusted polkadot or kusama nodes we hereby give you a guide that has enabled the clusted node service found on nnode.io. It was partly funded by the Web3 Foundation. Read more about it here: https://github.com/Validators/Nnode.io-Public-Node-Documentation/blob/master/nnode.md
 
 The setup consists of these main parts:
 
